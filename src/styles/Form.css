@@ -1,0 +1,66 @@
+@font-face {
+    font-family: SpaceMono;
+    src: url("./fonts/SpaceMono-Regular.woff2"),
+        url("./fonts/SpaceMono-Regular.woff");
+}
+
+.form-container {
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    width: 30vw;
+    font-size: 1.3em;
+    font-family: SpaceMono, system-ui;
+}
+
+.section {
+    background-color: #ECF4E8;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.field input {
+    width: 15vw;
+    font-size: 1em;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    border: none;
+}
+
+.btns-flex{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: end;
+}
+
+.btns-flex button{
+    background-color: #3B4953;
+    color: white;
+    font-size: 0.8em;
+    font-family: SpaceMono, monospace;
+    padding: 0.2em 0.5em;
+    border-radius: 0.4em;
+}
+
+.btns-flex button:hover{
+    transform: scale(1.01);
+    transition: transform ease-out 0.1s;
+    background-color: rgb(59, 73, 83, 0.9);
+}
+
+.btns-flex button:active{
+    transform: scale(0.99);
+    transition: transform ease-out 0.1s;
+}

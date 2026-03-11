@@ -1,0 +1,38 @@
+@font-face {
+    font-family: SpaceMono;
+    src: url("./fonts/SpaceMono-Regular.woff2"),
+        url("./fonts/SpaceMono-Regular.woff");
+}
+
+.preview-pane {
+    width: 50vw;
+    min-height: 50vh;
+    background-color: white;
+    margin: 2em 0em;
+    padding: 2em;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    box-shadow: -2px 2px 4px rgb(0,0,0,0.3);
+}
+
+.preview-box button {
+    padding: 0.2em 1em;
+    border: 2px solid #3B4953;
+    color: #3B4953;
+    font-size: 1.5em;
+    background-color: #EBF4DD;
+    border-radius: 0.5em;
+    font-family: SpaceMono, monospace;
+}
+
+.preview-box button:hover{
+    background-color: #90AB8B;
+    border: 2px solid #90AB8B ;
+    transform: scale(1.02);
+    transition: transform ease-out 0.2s;
+}
+
+.preview-box button:active{
+    transform: scale(0.98);
+    transition: transform ease-out 0.2s;
+}

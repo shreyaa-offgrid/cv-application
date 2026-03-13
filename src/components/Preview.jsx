@@ -1,10 +1,43 @@
 import "../styles/Preview.css"
 
-export default function Preview(){
+function GeneralInfo({generalInfo}){
+    return (
+        <div className='generalInfo'>
+            <h2>{generalInfo.Name}</h2>
+            <p>{generalInfo.City} | {generalInfo.Phone} | {generalInfo.Email} | 
+                <a href={generalInfo.LinkedIn}> LinkedIn</a>
+            </p>
+            <hr/>
+        </div>
+    )
+}
+
+function Education({education}){
+    return (
+        <div className="education">
+            <h3>Education</h3>
+            <hr />
+            
+        </div>
+    )
+}
+
+export default function Preview({generalInfo, education, experience}){
     return (
         <div className="preview-box">
             <div className="preview-pane">
-                Submit some details to start previewing...
+                {Object.keys(generalInfo).length > 0 ? 
+                    (<GeneralInfo generalInfo={generalInfo}/>) : 
+                    (<p>Submit some details to start previewing...</p>)
+                }
+
+                {Object.keys(education).length > 0 ? 
+                    (<Education/>) : null
+                }
+
+                {Object.keys(experience).length > 0 ? 
+                    (<div>Work Experience</div>) : null
+                }
             </div>
             <button>Download</button>
         </div>

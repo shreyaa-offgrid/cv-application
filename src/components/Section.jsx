@@ -5,8 +5,6 @@ import Buttons from "./Buttons";
 export default function Section({title, fields, placeholders, info, setInfo}){
     const [editMode, setEditMode] = useState(false);
     const [draftInfo, setDraftInfo] = useState(info);
-    const [degreesList, setDegreesList] = useState([]);
-    const [experiencesList, setExperiencesList] = useState([]);
 
     function handleChange(field, value){
         setDraftInfo(prev=> ({

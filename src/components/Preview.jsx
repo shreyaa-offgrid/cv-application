@@ -16,7 +16,12 @@ function Education({education}){
     return (
         <div className="education">
             <h3>Education</h3>
-            <hr />
+            <hr/>
+            <div className="eduTitle">
+                <p className='name'>{education['School Name']}</p>
+                <p>{education['Start Date']} - {education['End Date']}</p>
+            </div>
+            <p className="title">{education['Title of Study']}</p>
             
         </div>
     )
@@ -32,7 +37,7 @@ export default function Preview({generalInfo, education, experience}){
                 }
 
                 {Object.keys(education).length > 0 ? 
-                    (<Education/>) : null
+                    (<Education education={education}/>) : null
                 }
 
                 {Object.keys(experience).length > 0 ? 

@@ -19,6 +19,7 @@
 }
 
 .preview-box button {
+    position: fixed;
     padding: 0.2em 1em;
     border: 2px solid #3B4953;
     color: #3B4953;
@@ -54,9 +55,34 @@
 
 .generalInfo p a{
     text-decoration: none;
-    color: rgb(40, 166, 220);
+    color: #5A7863;
 }
 
 .generalInfo p a:hover{
-    color: rgb(20, 129, 175);
+    color: #3B4953;
+}
+
+.generalInfo hr{
+    border: none;
+    height: 5px;
+    background-color: #3B4953;
+    margin-bottom: 1em;
+}
+
+.education h3{
+    color: #3B4953;
+}
+
+.eduTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eduTitle .name{
+    font-weight:600;
+}
+
+.education .title{
+    font-style: italic;
 }

@@ -68,23 +68,31 @@
     border: none;
     height: 5px;
     background-color: #3B4953;
-    margin-bottom: 1em;
 }
 
-.education h3 {
+.education h3, .experience h3 {
+    margin-top: 1em;
     color: #3B4953;
 }
 
-.eduTitle {
+.eduTitle, .expTitle {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.eduTitle .name {
+.eduTitle .name, .expTitle .name {
     font-weight: 600;
 }
 
-.education .title {
+.education .title, .experience .title {
     font-style: italic;
+}
+
+.education hr, .experience hr {
+    border: none;
+    height: 1px;
+    background-color: #5A7863;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
 }

@@ -5,7 +5,7 @@ function GeneralInfo({generalInfo}){
         <div className='generalInfo'>
             <h2>{generalInfo.Name}</h2>
             <p>{generalInfo.City} | {generalInfo.Phone} | {generalInfo.Email} | 
-                <a href={generalInfo.LinkedIn}> LinkedIn</a>
+                <a href={generalInfo.LinkedIn} target="_blank"> LinkedIn</a>
             </p>
             <hr/>
         </div>
@@ -27,6 +27,21 @@ function Education({education}){
     )
 }
 
+function Experience({experience}){
+    return (
+        <div className="experience">
+            <h3>Experience</h3>
+            <hr/>
+            <div className="expTitle">
+                <p className='name'>{experience['Company Name']}</p>
+                <p>{experience['Start Date']} - {experience['End Date']}</p>
+            </div>
+            <p className="title">{experience['Position Title']}</p>
+            <p>{experience.Responsibilities}</p>
+        </div>
+    )
+}
+
 export default function Preview({generalInfo, education, experience}){
     return (
         <div className="preview-box">
@@ -41,7 +56,7 @@ export default function Preview({generalInfo, education, experience}){
                 }
 
                 {Object.keys(experience).length > 0 ? 
-                    (<div>Work Experience</div>) : null
+                    (<Experience experience={experience}/>) : null
                 }
             </div>
             <button>Download</button>

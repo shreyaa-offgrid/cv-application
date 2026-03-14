@@ -2,7 +2,7 @@ export default function Fields({fields, editMode, placeholders, handleChange, dr
     return (
         <>{fields.map(field => 
             <div className="field" key={field}>
-                <p>{field}</p>
+                <p>{field}:</p>
                 {!editMode && 
                     <input 
                         name={field}
@@ -12,7 +12,7 @@ export default function Fields({fields, editMode, placeholders, handleChange, dr
                         value={draftInfo[field] || ""}
                     />
                 }
-                {editMode && <p>{draftInfo[field] || ""}</p>}
+                {editMode && <p style={{fontSize:'0.9em', color:"#3B4953"}}>{draftInfo[field] || ""}</p>}
             </div>
         )}
         </>

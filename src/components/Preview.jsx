@@ -46,9 +46,12 @@ export default function Preview({generalInfo, education, experience}){
     return (
         <div className="preview-box">
             <div className="preview-pane">
+                {(Object.keys(generalInfo).length<1 && 
+                Object.keys(education).length<1 && 
+                Object.keys(experience).length<1) && 
+                <p>Submit some details to start previewing...</p>}
                 {Object.keys(generalInfo).length > 0 ? 
-                    (<GeneralInfo generalInfo={generalInfo}/>) : 
-                    (<p>Submit some details to start previewing...</p>)
+                    (<GeneralInfo generalInfo={generalInfo}/>) : null
                 }
 
                 {Object.keys(education).length > 0 ? 

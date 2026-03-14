@@ -5,8 +5,7 @@ export default function Fields({fields, editMode, placeholders, handleChange, dr
                 <p>{field}:</p>
                 {!editMode && 
                     <input 
-                        name={field}
-                        type="text" 
+                        name={field} 
                         placeholder={placeholders[field]}
                         onChange={(e) => handleChange(field, e.target.value)}
                         value={draftInfo[field] || ""}

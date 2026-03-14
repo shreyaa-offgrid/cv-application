@@ -38,29 +38,22 @@
     border: none;
 }
 
-.btns-flex{
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    justify-content: end;
-}
 
-.btns-flex button{
-    background-color: #3B4953;
-    color: white;
-    font-size: 0.8em;
+.add-more {
+    background-color: #ECF4E8;
     font-family: SpaceMono, monospace;
-    padding: 0.2em 0.5em;
-    border-radius: 0.4em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    border: #3B4953 1px dashed;
 }
 
-.btns-flex button:hover{
-    transform: scale(1.01);
-    transition: transform ease-out 0.1s;
+.add-more:hover {
     background-color: rgb(59, 73, 83, 0.9);
+    color: white;
+    transition: background-color 0.1s linear;
 }
 
-.btns-flex button:active{
+.add-more:active {
     transform: scale(0.99);
-    transition: transform ease-out 0.1s;
+    transition: transform 0.1s ease-out;
 }

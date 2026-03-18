@@ -1,3 +1,5 @@
+import "../styles/Fields.css"
+
 export default function Fields({ fields, editMode, placeholders, handleChange, draftInfo }) {
     return (
         <>{fields.map(field =>

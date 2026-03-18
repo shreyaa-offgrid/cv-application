@@ -1,0 +1,13 @@
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.field input {
+    width: 15vw;
+    font-size: 0.8em;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    border: none;
+}

@@ -11,7 +11,7 @@ export default function Entry({ fields, placeholders, onSave }) {
     }
 
     function handleSubmit() {
-        onSave(draftInfo);   // sends data up to App via onSaveEntry
+        onSave(draftInfo);   
         setEditMode(true);
     }
 

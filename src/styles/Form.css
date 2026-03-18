@@ -14,16 +14,6 @@
     font-family: SpaceMono, system-ui;
 }
 
-.section {
-    background-color: #ECF4E8;
-    padding: 0.8em;
-    border-radius: 0.8em;
-    box-shadow: 0px 3.2px 3.2px rgb(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4em;
-}
-
 .field {
     display: flex;
     align-items: center;
@@ -39,21 +29,3 @@
 }
 
 
-.add-more {
-    background-color: #ECF4E8;
-    font-family: SpaceMono, monospace;
-    font-size: 0.9em;
-    border-radius: 0.4em;
-    border: #3B4953 1px dashed;
-}
-
-.add-more:hover {
-    background-color: rgb(59, 73, 83, 0.9);
-    color: white;
-    transition: background-color 0.1s linear;
-}
-
-.add-more:active {
-    transform: scale(0.99);
-    transition: transform 0.1s ease-out;
-}

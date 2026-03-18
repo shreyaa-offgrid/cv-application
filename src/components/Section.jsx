@@ -2,6 +2,7 @@ import { useState } from "react";
 import Fields from "./Fields";
 import Buttons from "./Buttons";
 import Entry from "./Entry";
+import "../styles/Section.css"
 
 export default function Section({ title, fields, placeholders, info, setInfo, entries, onSaveEntry, onAddMore }) {
     const isGeneral = title === 'General Information';

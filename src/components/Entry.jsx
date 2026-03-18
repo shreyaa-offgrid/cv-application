@@ -20,7 +20,7 @@ export default function Entry({ fields, placeholders, onSave }) {
     }
 
     return (
-        <div className="entry">
+        <>
             <Fields
                 fields={fields}
                 placeholders={placeholders}
@@ -33,6 +33,6 @@ export default function Entry({ fields, placeholders, onSave }) {
                 handleSubmit={handleSubmit}
                 handleEdit={handleEdit}
             />
-        </div>
+        </>
     );
 }

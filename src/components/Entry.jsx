@@ -1,0 +1,38 @@
+import { useState } from "react";
+import Fields from "./Fields";
+import Buttons from "./Buttons";
+
+export default function Entry({ fields, placeholders, onSave }) {
+    const [editMode, setEditMode] = useState(false);
+    const [draftInfo, setDraftInfo] = useState({});
+
+    function handleChange(field, value) {
+        setDraftInfo(prev => ({ ...prev, [field]: value }));
+    }
+
+    function handleSubmit() {
+        onSave(draftInfo);   // sends data up to App via onSaveEntry
+        setEditMode(true);
+    }
+
+    function handleEdit() {
+        setEditMode(false);
+    }
+
+    return (
+        <div className="entry">
+            <Fields
+                fields={fields}
+                placeholders={placeholders}
+                editMode={editMode}
+                handleChange={handleChange}
+                draftInfo={draftInfo}
+            />
+            <Buttons
+                editMode={editMode}
+                handleSubmit={handleSubmit}
+                handleEdit={handleEdit}
+            />
+        </div>
+    );
+}

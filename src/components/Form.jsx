@@ -5,7 +5,8 @@ import Section from "./Section";
 
 export default function Form({
     generalInfo, education, experience,
-    setGeneralInfo, setEducation, setExperience }) {
+    setGeneralInfo, setEducation, setExperience,
+    onSaveEntry, onAddMore }) {
     return (
         <div className="form-container">
             <Section
@@ -19,17 +20,18 @@ export default function Form({
                 title="Education"
                 fields={eduFields}
                 placeholders={eduPlaceholders}
-                info={education}
-                setInfo={setEducation}
+                entries={education}
+                onSaveEntry={(id, data) => onSaveEntry(setEducation, id, data)}
+                onAddMore={() => onAddMore(setEducation)}
             />
             <Section
                 title="Experience"
                 fields={expFields}
                 placeholders={expPlaceholders}
-                info={experience}
-                setInfo={setExperience}
+                entries={experience}
+                onSaveEntry={(id, data) => onSaveEntry(setExperience, id, data)}
+                onAddMore={() => onAddMore(setExperience)}
             />
-           
         </div>
     )
 }

@@ -7,18 +7,28 @@ import { useState } from "react";
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({});
-  const [education, setEducation] = useState({});
-  const [experience, setExperience] = useState({});
+  const [education, setEducation] = useState([{ id: crypto.randomUUID() }]);
+  const [experience, setExperience] = useState([{ id: crypto.randomUUID() }]);
+
+  function handleSaveEntry(setInfo, id, data) {
+    setInfo(prev => prev.map(e => (e.id === id ? { id, ...data } : e)));
+  }
+
+  function handleAddMore(setInfo) {
+    setInfo(prev => [...prev, { id: crypto.randomUUID() }]);
+  }
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className="main-flex">
         <Form
           generalInfo={generalInfo}
           education={education}
           experience={experience}
           setGeneralInfo={setGeneralInfo}
+          onSaveEntry={handleSaveEntry}
+          onAddMore={handleAddMore}
           setEducation={setEducation}
           setExperience={setExperience}
         />
@@ -28,7 +38,7 @@ function App() {
           experience={experience}
         />
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }

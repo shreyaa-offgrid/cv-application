@@ -1,68 +1,81 @@
 import "../styles/Preview.css"
 
-function GeneralInfo({generalInfo}){
+function GeneralInfo({ generalInfo }) {
     return (
         <div className='generalInfo'>
             <h2>{generalInfo.Name}</h2>
-            <p>{generalInfo.City} | {generalInfo.Phone} | {generalInfo.Email} | 
+            <p>{generalInfo.City} | {generalInfo.Phone} | {generalInfo.Email} |
                 <a href={generalInfo.LinkedIn} target="_blank"> LinkedIn</a>
             </p>
-            <hr/>
+            <hr />
         </div>
     )
 }
 
-function Education({education}){
+function EducationEntry({ eduEntry }) {
+    return (
+        <>
+            <div className="eduTitle">
+                <p className='name'>{eduEntry['School Name']}</p>
+                <p>{eduEntry['Start Date']} - {eduEntry['End Date']}</p>
+            </div>
+            <p className="title">{eduEntry['Title of Study']}</p>
+        </>
+    )
+}
+
+function ExperienceEntry({ expEntry }) {
+    return (
+        <>
+            <div className="expTitle">
+                <p className='name'>{expEntry['Company Name']}</p>
+                <p>{expEntry['Start Date']} - {expEntry['End Date']}</p>
+            </div>
+            <p className="title">{expEntry['Position Title']}</p>
+            <p>{expEntry.Responsibilities}</p>
+        </>
+    )
+}
+
+function Education({ education }) {
     return (
         <div className="education">
             <h3>Education</h3>
-            <hr/>
-            <div className="eduTitle">
-                <p className='name'>{education['School Name']}</p>
-                <p>{education['Start Date']} - {education['End Date']}</p>
-            </div>
-            <p className="title">{education['Title of Study']}</p>
-            
+            <hr />
+            {education.map(entry => (
+                <EducationEntry key={entry.id} eduEntry={entry} />
+            ))}
         </div>
     )
 }
 
-function Experience({experience}){
+function Experience({ experience }) {
     return (
         <div className="experience">
             <h3>Experience</h3>
-            <hr/>
-            <div className="expTitle">
-                <p className='name'>{experience['Company Name']}</p>
-                <p>{experience['Start Date']} - {experience['End Date']}</p>
-            </div>
-            <p className="title">{experience['Position Title']}</p>
-            <p>{experience.Responsibilities}</p>
+            <hr />
+            {experience.map(entry => (
+                <ExperienceEntry key={entry.id} expEntry={entry} />
+            ))}
         </div>
     )
 }
 
-export default function Preview({generalInfo, education, experience}){
+export default function Preview({ generalInfo, education, experience }) {
+    const hasGeneral = Object.keys(generalInfo).length > 0;
+const hasEducation = education.some(e => Object.keys(e).length > 1);
+const hasExperience = experience.some(e => Object.keys(e).length > 1);
     return (
         <div className="preview-box">
             <div className="preview-pane">
-                {(Object.keys(generalInfo).length<1 && 
-                Object.keys(education).length<1 && 
-                Object.keys(experience).length<1) && 
-                <p>Submit some details to start previewing...</p>}
-                {Object.keys(generalInfo).length > 0 ? 
-                    (<GeneralInfo generalInfo={generalInfo}/>) : null
+                {!hasGeneral && !hasEducation && !hasExperience &&
+                    <p>Submit some details to start previewing...</p>
                 }
-
-                {Object.keys(education).length > 0 ? 
-                    (<Education education={education}/>) : null
-                }
-
-                {Object.keys(experience).length > 0 ? 
-                    (<Experience experience={experience}/>) : null
-                }
+                {hasGeneral && <GeneralInfo generalInfo={generalInfo} />}
+                {hasEducation && <Education education={education} />}
+                {hasExperience && <Experience experience={experience} />}
             </div>
-            <button>Download</button>
+            <button className="download-btn" onClick={() => window.print()}>Download</button>
         </div>
     )
 }

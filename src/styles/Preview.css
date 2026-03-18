@@ -4,6 +4,40 @@
         url("./fonts/SpaceMono-Regular.woff");
 }
 
+@media print {
+    header, footer, .form-container, .download-btn {
+        display: none !important;
+    }
+
+    .main-flex {
+        display: block;
+    }
+
+    .preview-box {
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+    }
+
+    .preview-pane {
+        width: 100% !important;
+        min-height: 297mm !important;
+        padding: 15mm !important;
+        margin: 0 !important;
+        font-size: 12pt !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+    }
+
+    .generalInfo hr,
+    .education hr,
+    .experience hr {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
 .preview-box {
     position: sticky;
     top: 0em;
